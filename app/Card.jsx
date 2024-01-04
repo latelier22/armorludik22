@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-const Card = ({card, buttonColor}) => {
+const Card = ({card, buttonColor, children}) => {
   useEffect(() => {
     const init = async () => {
       const { Ripple, initTE } = await import("tw-elements");
@@ -31,6 +31,7 @@ const Card = ({card, buttonColor}) => {
     <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
       {card.text}
     </p>
+    {children}
     <div className="flex flex-row justify-center">
     <button
       type="button"

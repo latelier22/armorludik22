@@ -32,7 +32,9 @@ const Tarifs = () => {
   };
   const actions2 = [
     "Quand vous venez au Repaire des p’tits loups n’oubliez pas les chaussettes pour vos enfants.",
+    "Pas de violence"
   ];
+  const paragraphe2 = "A très bientôt!"
 
   const mySubTitleColor = "text-teal-200";
   const backgroundColor = "bg-teal-500";
@@ -55,6 +57,7 @@ const Tarifs = () => {
         photo={photo1}
         gauche={false}
       />
+        
       
 </div>
 <ListeActionsGauche
@@ -63,7 +66,23 @@ const Tarifs = () => {
         listeSubTitle={listeSubTitle2}
         photo={photo2}
         gauche={true}
-      />
+      >
+        <div className="flex flex-col md:flex-row items-center md:items-end md:justify-center">
+        <img
+            alt="logo le repaire des ptit loup"
+            className={
+              "block h-40 w-auto object-cover rounded-lg"
+            }
+            src={`images/logo-le-repaire-des-petit-loups.png`}
+          />
+        <h2 className="text-xl font-bold mb-2 text-center">
+        {paragraphe2}
+        </h2>
+       
+          </div>
+        
+      
+      </ListeActionsGauche>
       <Footer backgroundColor={backgroundColor} />
     </RootLayout>
   );
