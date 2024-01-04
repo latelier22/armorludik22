@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function App() {
+export default function App({image}) {
   return (
     <div className="flex justify-center w-full">
       <img
-        src="images/photo-accueil.jpg"
+        src={`images/${image}`}
         className="h-auto w-full"
         alt="parc de jeu du repaire des p'tits loups"
       />

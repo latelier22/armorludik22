@@ -20,7 +20,7 @@ const ListeActionsGauche = ({
   console.log(photo);
 
   return (
-    <div className=" container mx-auto px-5 py-2 lg:px-32 lg:pt-12 animate-slideRight">
+    <div className={`container mx-auto px-5 py-2 lg:px-32 lg:pt-12 ${gauche ? "animate-slideLeft" : "animate-slideRight"}`}>
       <div className="flex flex-col items-center">
         <div className=" flex flex-col md:flex-row align-middle items-center">
           <img

@@ -25,11 +25,13 @@ const photos = [
 
 
 const cards = [
-  { title: "CARTES DE JEU", text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde", button : "COMMANDEZ !" ,
-  url: "carte-jeux.jpg", alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde"},
-  { title: "CARTES DE JEU", text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde", button : "COMMANDEZ !" ,
-  url: "carte-jeux.jpg", alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde"},
-  { title: "CARTES DE JEU", text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde", button : "COMMANDEZ !" ,
+  { title: "VOITURE COMMANDES", text: "Acheter votre véhicule pour faire des balades avec ou organiser des courses entre ami(e)s.", button : "COMMANDEZ !" , buttonColor:'bg-sky-500',
+  url: "voiture-commande.jpg", alt: "Acheter votre véhicule pour faire des balades avec ou organiser des courses entre ami(e)s."},
+
+  { title: "JEUX EDUCATIFS ET JEUX SPECIALISES", text: "Apprendre en s'ammusant", button : "COMMANDEZ !", buttonColor:'bg-orange-500' ,
+  url: "jeux-pedagogiques-pour-les-ecoles.jpg", alt: "Apprendre en s'ammusant"},
+
+  { title: "CARTES DE JEU", text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde", button : "COMMANDEZ !" , buttonColor:'bg-primary-700',
   url: "carte-jeux.jpg", alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde"},
  
 ];
@@ -47,18 +49,6 @@ const cards = [
       <div className="bg-teal-200">
         <Cards cards={cards} buttonColor={backgroundColor} />
       </div>
-{/* <div className="flex flex-row justify-center">
-      <section className="flex flex-row justify-around container  mt-8 p-4 bg-gray-100">
-      <Card photo={photos[0]} card={cards[0]}/>
-      <Card photo={photos[0]} card={cards[0]}/>
-      <Card photo={photos[0]} card={cards[0]}/>
-       
-      </section>
-      </div> */}
-      {/* <section className="container mx-auto mt-8 p-4 bg-gray-100">
-        <h2 className="text-2xl font-bold mb-4">Images de Nos Réparations</h2>
-         <DynamicCarousel images={images} /> 
-      </section> */}
 
       <Footer backgroundColor={backgroundColor} />
     </RootLayout>

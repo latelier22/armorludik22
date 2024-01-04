@@ -106,17 +106,7 @@ const Footer = ({backgroundColor}) => {
       </div>
 
       <div className="mx-6 pt-8 pb-4 text-center">
-        {/* <div className="mb-6 bg-black">
-          <h5 className="mb-2 text-white font-bold uppercase">
-            Une fuite ou une fissure dans votre toiture ?
-          </h5>
 
-          <p className="mb-4 text-orange-500">Il faut agir vite !</p>
-          <p className="mb-4 text-white">
-            Nous intervenons 7/7 J - 24/24h en cas d&apos;urgences ou fuites de
-            votre toiture.
-          </p>
-        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 mb-4">
           <div className="mb-6">
@@ -124,30 +114,32 @@ const Footer = ({backgroundColor}) => {
               Qui sommes-nous?
             </h5>
 
-            <ul className="mb-0 list-none text-yellow-500">
+            <ul className="mb-0 text-xl list-none text-neutral-800">
               <li>Armor ludiK - Repaire des p&apos;tits loups</li>
               <li>43, rue de Cornouaille</li>
               <li>22600 LOUDEAC</li>
               <li>0296251736</li>
-              <li className=" text-white">N° de SIRET 91785987800014</li>
+              <li className="mt-5 text-sm text-white">N° de SIRET 91785987800014</li>
             </ul>
           </div>
 
-          <div className="mb-6 flex-col flex items-center">
-            <img src="images/logo.png" className="h-60" alt="..." />
+ {/* LOGO ANIMATION: ROTATION */}
+
+          <div className="mb-6 flex-col flex items-center ">
+            <img src="images/logo.png" className="h-60 hover:animate-rotateAccelerate" alt="..." />
           </div>
 
-          <div className="mb-6">
-            <h5 className="mb-2.5 font-bold  text-white  dark:text-neutral-200">
+          <div className="mb-6 flex flex-col justify-center items-center">
+            <h5 className=" pb-3 justify-center flex-row  border-b-2 border-black mb-8  font-bold  text-white  dark:text-neutral-200">
               Nos services
             </h5>
 
             <ul className="mb-0 list-none">
               {menuItems.map((menuItem, index) => (
-                <li key={index}>
+                <li key={index} className="mb-3">
                   <a
                     href={menuItem.route}
-                    className=" text-white hover:text-sky-400 dark:text-neutral-200"
+                    className=" text-2xl font-bold md:font-normal md:text-lg hover:border-b-2 hover:border-black text-white hover:text-sky-400 dark:text-neutral-200"
                   >
                     {menuItem.label}
                   </a>
