@@ -25,13 +25,16 @@ const photos = [
 
 
 const cards = [
-  { title: "VOITURE COMMANDES", text: "Acheter votre véhicule pour faire des balades avec ou organiser des courses entre ami(e)s.", button : "COMMANDEZ !" , buttonColor:'bg-sky-500',
+  { title: "VOITURE COMMANDES", text: "Acheter votre véhicule pour faire des balades avec ou organiser des courses entre ami(e)s.", button : "COMMANDEZ !" , buttonColor:'bg-sky-500', link:"https://dev-54ta5gq-tz7gps24d2hqk.fr-3.platformsh.site/fr_FR/taxons/vehicules-radio-commandes",
   url: "voiture-commande.jpg", alt: "Acheter votre véhicule pour faire des balades avec ou organiser des courses entre ami(e)s."},
 
-  { title: "JEUX EDUCATIFS ET JEUX SPECIALISES", text: "Apprendre en s'ammusant", button : "COMMANDEZ !", buttonColor:'bg-orange-500' ,
+  { title: "JEUX EDUCATIFS ET JEUX SPECIALISES", text: "Apprendre en s'ammusant", button : "COMMANDEZ !", buttonColor:'bg-orange-500' , link:"https://dev-54ta5gq-tz7gps24d2hqk.fr-3.platformsh.site/fr_FR/taxons/vehicules-radio-commandes",
   url: "jeux-pedagogiques-pour-les-ecoles.jpg", alt: "Apprendre en s'ammusant"},
 
-  { title: "CARTES DE JEU", text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde", button : "COMMANDEZ !" , buttonColor:'bg-primary-700',
+  { title: "CARTES DE JEU", text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde", button : "COMMANDEZ !" , buttonColor:'bg-primary-700', link:"https://dev-54ta5gq-tz7gps24d2hqk.fr-3.platformsh.site/fr_FR/taxons/vehicules-radio-commandes",
+  url: "carte-jeux.jpg", alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde"},
+
+  { title: "IDEES CADEAUX", text: "Faîtes le plein d'idées cadeaux", button : "COMMANDEZ !" , buttonColor:'bg-primary-700', link:"https://dev-54ta5gq-tz7gps24d2hqk.fr-3.platformsh.site/fr_FR/taxons/cadeaux",
   url: "carte-jeux.jpg", alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde"},
  
 ];

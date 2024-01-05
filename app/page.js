@@ -30,7 +30,7 @@ const logo = "logo-le-repaire-des-petit-loups.png"
   <Image image={image} />
   <img
     src={`images/${logo}`}
-    className="h-full md:h-2/3 w-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-slideTop"
+    className="h-full md:h-2/3 w-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-bounceAndStabilize"
     alt="logo repaire des p'tits loups"
   />
 </div>

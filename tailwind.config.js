@@ -14,6 +14,13 @@ module.exports = {
   theme: {
     extend: {
       keyframes: () => ({
+        bounceAndStabilize: {
+          '0%': { transform: 'translateY(-600px)' },
+          '20%, 50%, 80%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-300px)' },
+          '60%': { transform: 'translateY(-150px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
         rotateAccelerate: {
           "0%": { transform: "rotate(0deg)" },
           "50%": { transform: "rotate(1800deg)" }, // 5 tours à 360 degrés chacun
@@ -41,7 +48,7 @@ module.exports = {
         },
       }),
       animation: {
-        rotateAccelerate: "rotateAccelerate 3s cubic-bezier(0.68, -0.55, 0.27, 1.55)", // Ajustez la durée et la fonction de chronométrage selon vos besoins
+        bounceAndStabilize: 'bounceAndStabilize 3s ease-in-out',
         appear : "appear 1s ease-in",
         slideTop: "slideTop 1s ease-in",
         slideTop0: "slideTop 0.3s ease-in",
