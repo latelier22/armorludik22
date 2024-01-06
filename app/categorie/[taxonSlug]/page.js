@@ -4,7 +4,6 @@ import GetTaxons from '../../API/GetTaxons';
 import GetProductsByTaxonCode from "../../API/GetProductsByTaxonCode";
 import GetProductVariant from "../../API/GetProductVariant";
 import formatPrice from "../../Utils/FormatPrice";
-
 const API_URL_BASE = "http://sylius.latelier22.fr";
 
 async function MyPage ({ params }) {
