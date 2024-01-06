@@ -3,7 +3,7 @@ import { Suspense} from "react";
 import GetTaxons from '../../API/GetTaxons';
 import GetProductsByTaxonCode from "../../API/GetProductsByTaxonCode";
 import GetProductVariant from "../../API/GetProductVariant";
-import formatPrice from "../../Utils/FormatPrice";
+import formatPrice from "../../Utils/formatPrice";
 const API_URL_BASE = "http://sylius.latelier22.fr";
 
 async function MyPage ({ params }) {
