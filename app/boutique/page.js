@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Title from "../Title";
 import Cards from "../Cards";
 import Card from "../Card";
+import getTaxons from "../API/GetTaxons";
 
 const DynamicCarousel = dynamic(() => import("../MyCarousel"), {
   ssr: false,
