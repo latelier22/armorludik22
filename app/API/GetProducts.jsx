@@ -1,7 +1,8 @@
 // GetTaxons.js
 import axios from "axios";
+import {API_URL_BASE, API_URL_PRODUCTS} from "./index"
 
-const API_URL = "http://sylius.latelier22.fr/api/v2/shop/products?page=1&itemsPerPage=30";
+const API_URL = API_URL_BASE + API_URL_PRODUCTS
 
 async function GetProducts() {
   try {

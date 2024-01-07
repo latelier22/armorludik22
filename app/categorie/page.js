@@ -1,47 +1,86 @@
 // MyPage.js
-import { Suspense } from 'react';
-import GetTaxons from '../API/GetTaxons';
-import GetProducts from '../API/GetProducts';
+import { Suspense } from "react";
+import GetTaxons from "../API/GetTaxons";
+import GetTaxonsImages from "../API/GetTaxonsImages";
+import getTaxonImage from "../API/GetTaxonImage";
+import { FILTER_SETS } from "../API";
 
+import Navbar from "../NavBar";
+import Footer from "../Footer";
+import RootLayout from "../layout";
+import Title from "../Title";
+import Cards from "../Cards";
+
+const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
 const API_URL_BASE = "http://sylius.latelier22.fr";
 
-async function Taxons ()  {
- 
+async function Taxons() {
+  const getTaxons = await GetTaxons();
+  const taxonsImages = await GetTaxonsImages();
 
-        const taxons = await GetTaxons();
-        const products = await GetProducts();
+  // Mettre à jour chaque taxon avec la liste d'images correspondantes ou un tableau vide
+  const updatedTaxons = await Promise.all(
+    getTaxons.map(async (taxon) => {
+      const matchingImages = taxonsImages.filter(
+        (image) => image.owner === taxon["@id"]
+      );
 
-        console.log(taxons[0],products[0])
-  
+      const imagesUrl = await Promise.all(
+        matchingImages.map(async (image) => {
+          const imageUrl = await getTaxonImage(image.id, FILTER_SETS.sylius_large.filter_size);
+          return imageUrl;
+        })
+      );
+
+      return {
+        ...taxon,
+        images: matchingImages || [], // Tableau vide si aucune correspondance
+        imagesUrl,
+      };
+    })
+  );
+
+  const cards = updatedTaxons.map((taxon) => {
+    const link = `categorie/${encodeURIComponent(taxon.slug)}`;
+    const url = taxon.imagesUrl[0]
+      ? `${taxon.imagesUrl[0]}`
+      : PLACEHOLDER_IMAGE_URL;
+
+    return {
+      title: taxon.name,
+      text: taxon.description, // Ajoutez la propriété appropriée du taxon ici
+      button: "COMMANDEZ !",
+      buttonColor: "bg-sky-500", // Changez la couleur du bouton selon vos besoins
+      link,
+      url,
+      alt: taxon.name,
+    };
+  });
+
+  const pageTitle = "Boutique Sylius";
+  const pageDescription =
+    "A venir, tous les jeux et jouets pour petits et grands disponibles à la vente en ligne, et toujours au repaire des p'tits loups";
+
+  const backgroundColor = "bg-teal-500";
+
   return (
     <Suspense>
-      <div>
-        CATEGORIES:
-        {taxons.map((taxon) => (
-          <div key={taxon["@id"]}>
-            {/* Render taxon data appropriately */}
-            
-            {/* Render taxon data as a link */}
-            <a href={`categorie/${taxon.slug}`} key={taxon.code}>
-              {taxon.name}
-            </a>
-            
-          </div>
-        ))}
-      </div>
-      <div>
-        PRODUITS:
-        {products.map((product) => (
-          <div key={product["@id"]}>
-            {/* Render taxon data appropriately */}
-            {product.name}
-            <img src={`${API_URL_BASE}/media/cache/sylius_shop_product_thumbnail/39/f2/da6ca6f9831185cf9e246b110d85.png`} /> 
-          </div>
-        ))}
-        <img src={`${API_URL_BASE}/media/cache/sylius_shop_product_large_thumbnail/39/f2/da6ca6f9831185cf9e246b110d85.png`} />
-      </div>
+      <RootLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+        <Navbar />
+        <Title
+          myTitle={pageTitle}
+          mySubTitle={pageDescription}
+          backgroundColor={backgroundColor}
+        />
+
+        <div className="bg-teal-200">
+          <Cards cards={cards} buttonColor={backgroundColor} syliusCard={true} />
+        </div>
+
+        <Footer backgroundColor={backgroundColor} />
+      </RootLayout>
     </Suspense>
   );
-};
+}
 
 export default Taxons;

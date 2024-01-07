@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Card from "./Card";
 
-const Cards = ({ cards, buttonColor }) => {
+const Cards = ({ cards, buttonColor , syliusCard}) => {
   useEffect(() => {
     const init = async () => {
       const { Tooltip, initTE } = await import("tw-elements");
@@ -24,6 +24,7 @@ const Cards = ({ cards, buttonColor }) => {
               >
                 <div style={{ flex: "1" }}>
                   <Card
+                    syliusCard={syliusCard}
                     card={card}
                     buttonColor={
                       card.buttonColor === "" ? buttonColor : card.buttonColor

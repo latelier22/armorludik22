@@ -8,9 +8,6 @@ import Cards from "../Cards";
 import Card from "../Card";
 import getTaxons from "../API/GetTaxons";
 
-const DynamicCarousel = dynamic(() => import("../MyCarousel"), {
-  ssr: false,
-});
 
 const Reparation = () => {
   const pageTitle = "Boutique";

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-const Card = ({ card, buttonColor, children }) => {
+const Card = ({ card, buttonColor, children, syliusCard }) => {
   useEffect(() => {
     const init = async () => {
       const { Ripple, initTE } = await import("tw-elements");
@@ -20,8 +20,7 @@ const Card = ({ card, buttonColor, children }) => {
         >
           <img
             className="absolute top-0 left-0 w-full h-full object-cover object-center"
-            src={`images/${card.url}`}
-            alt={card.alt}
+            src={syliusCard ? card.url : `images/${card.url}`}
           />
         </a>
 

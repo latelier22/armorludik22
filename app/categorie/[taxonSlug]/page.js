@@ -1,10 +1,17 @@
+
 // MyPage.js
+import {API_URL_BASE} from "../../API"
 import { Suspense} from "react";
 import GetTaxons from '../../API/GetTaxons';
 import GetProductsByTaxonCode from "../../API/GetProductsByTaxonCode";
 import GetProductVariant from "../../API/GetProductVariant";
 import formatPrice from "../../Utils/formatPrice";
-const API_URL_BASE = "http://sylius.latelier22.fr";
+
+
+
+
+
+
 
 async function MyPage ({ params }) {
   // Fonction pour obtenir le code à partir du slug dans les données des taxons
@@ -21,6 +28,8 @@ async function MyPage ({ params }) {
         const targetSlug = params.taxonSlug;
         const taxonCode = getCodeFromSlug(taxons, targetSlug);
         const products = await GetProductsByTaxonCode(taxonCode);
+
+        //console.log("products",products)
 
         // Fonction asynchrone pour obtenir le variant par défaut de chaque produit
         const getDefaultVariant = async (variant) => {
@@ -45,8 +54,6 @@ async function MyPage ({ params }) {
           })
         );
 
-        console.log(updatedProducts[0].imagethumbnailPath)
-
 
   return (
     <Suspense>
@@ -56,6 +63,7 @@ async function MyPage ({ params }) {
           <div key={taxon["@id"]}>
             <a href={`/categorie/${taxon.slug}`} key={taxon.code}>
               {taxon.name}
+              <img src={`${API_URL_BASE}/media/cache/sylius_small${taxon.imagethumbnailPath}`} />
             </a>
           </div>
         ))}
