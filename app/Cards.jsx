@@ -24,6 +24,7 @@ const Cards = ({ cards, buttonColor , syliusCard}) => {
               >
                 <div style={{ flex: "1" }}>
                   <Card
+                    index ={index}
                     syliusCard={syliusCard}
                     card={card}
                     buttonColor={

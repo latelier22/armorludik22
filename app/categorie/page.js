@@ -10,6 +10,7 @@ import Footer from "../Footer";
 import RootLayout from "../layout";
 import Title from "../Title";
 import Cards from "../Cards";
+import MyModal from "../MyModal";
 
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
 const API_URL_BASE = "http://sylius.latelier22.fr";
@@ -76,6 +77,8 @@ async function Taxons() {
         <div className="bg-teal-200">
           <Cards cards={cards} buttonColor={backgroundColor} syliusCard={true} />
         </div>
+
+        {/* <MyModal /> */}
 
         <Footer backgroundColor={backgroundColor} />
       </RootLayout>
