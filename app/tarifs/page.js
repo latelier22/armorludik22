@@ -32,7 +32,8 @@ const Tarifs = () => {
   };
   const actions2 = [
     "Quand vous venez au Repaire des p’tits loups n’oubliez pas les chaussettes pour vos enfants.",
-    "Pas de violence"
+    "Pas de violence...",
+    "Autres..."
   ];
   const paragraphe2 = "A très bientôt!"
 

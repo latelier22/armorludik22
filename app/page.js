@@ -16,6 +16,9 @@ const Home = () => {
 const myTitle = "REPAIRE DES P'TITS LOUPS"
 const mySubTitle ="SALLE DE JEU POUR ENFANT"
 
+const image = "accueil-tobogan.jpg"
+const logo = "logo-le-repaire-des-petit-loups.png"
+
   const backgroundColor ="bg-orange-500";
 
 
@@ -23,7 +26,14 @@ const mySubTitle ="SALLE DE JEU POUR ENFANT"
     <RootLayout pageTitle={pageTitle} pageDescription={pageDescription}>
       <Navbar />
       <Title myTitle={myTitle ==='' ? pageTitle : myTitle} mySubTitle={mySubTitle ==='' ? pageDescription : mySubTitle} backgroundColor={backgroundColor}/>
-      <Image/>
+      <div style={{ position: 'relative' }}>
+  <Image image={image} />
+  <img
+    src={`images/${logo}`}
+    className="h-full md:h-2/3 w-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-bounceAndStabilize"
+    alt="logo repaire des p'tits loups"
+  />
+</div>
       <Footer backgroundColor ={backgroundColor}/>
     </RootLayout>
   );
