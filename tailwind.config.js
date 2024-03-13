@@ -21,6 +21,14 @@ module.exports = {
           '60%': { transform: 'translateY(-150px)' },
           '100%': { transform: 'translateY(0)' },
         },
+        bounceAndStabilizeCenterX: {
+          "0%": { transform: "translateY(-600px) translateX(-50%)" },
+          "20%, 50%, 80%": { transform: "translateY(0) translateX(-50%)" },
+          "40%": { transform: "translateY(-300px) translateX(-50%)" },
+          "60%": { transform: "translateY(-150px) translateX(-50%)" },
+          "100%": { transform: "translateY(0) translateX(-50%)" },
+        },
+
         rotateAccelerate: {
           "0%": { transform: "rotate(0deg)" },
           "50%": { transform: "rotate(1800deg)" }, // 5 tours à 360 degrés chacun
@@ -48,7 +56,8 @@ module.exports = {
         },
       }),
       animation: {
-        bounceAndStabilize: 'bounceAndStabilize 3s ease-in-out',
+        bounceAndStabilize: 'bounceAndStabilize 1s ease-in-out',
+        bounceAndStabilizeCenterX: "bounceAndStabilizeCenterX 1s ease-in-out",
         appear : "appear 1s ease-in",
         slideTop: "slideTop 1s ease-in",
         slideTop0: "slideTop 0.3s ease-in",
