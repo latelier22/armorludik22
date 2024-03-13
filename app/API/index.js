@@ -1,4 +1,4 @@
-export const API_URL_BASE = "http://sylius.latelier22.fr";
+export const API_URL_BASE = "http://test.pascal-chantrel.fr";
 
 export const API_URL_PRODUCTS = "/api/v2/shop/products?page=1&itemsPerPage=30";
 

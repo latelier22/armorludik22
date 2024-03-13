@@ -13,7 +13,7 @@ import Cards from "../Cards";
 import MyModal from "../MyModal";
 
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/150";
-const API_URL_BASE = "http://sylius.latelier22.fr";
+const API_URL_BASE = "http://test.pascal-chantrel.fr";
 
 async function Taxons() {
   const getTaxons = await GetTaxons();

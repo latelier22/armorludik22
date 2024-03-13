@@ -1,7 +1,7 @@
 // GetTaxons.js
 import axios from "axios";
 
-const API_URL_PRODUCTS = "http://sylius.latelier22.fr/api/v2/shop/products";
+const API_URL_PRODUCTS = "http://test.pascal-chantrel.fr/api/v2/shop/products";
 
 async function GetProductsBytaxonCode(taxonCode) {
   try {

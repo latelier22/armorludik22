@@ -1,7 +1,7 @@
 // GetTaxons.js
 import axios from "axios";
 
-const API_URL_BASE = "http://sylius.latelier22.fr";
+const API_URL_BASE = "http://test.pascal-chantrel.fr";
 
 async function GetProductVariant(variant) {
   try {

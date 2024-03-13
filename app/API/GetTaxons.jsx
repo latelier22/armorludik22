@@ -1,7 +1,7 @@
 // GetTaxons.js
 import axios from "axios";
 
-const API_URL = "http://sylius.latelier22.fr/api/v2/shop/taxons";
+const API_URL = "http://test.pascal-chantrel.fr/api/v2/shop/taxons";
 
 async function GetTaxons() {
   try {
